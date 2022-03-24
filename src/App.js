@@ -10,7 +10,7 @@ function App() {
   const [search, setsearch] = useState('')
 
   useEffect(async() => {
-      const movies = await axios.get(`http://www.omdbapi.com?i=tt3896198&apikey=7645a5c3&s=${search != '' ? search : 'movies'}`)
+      const movies = await axios.get(`https://www.omdbapi.com?i=tt3896198&apikey=7645a5c3&s=${search != '' ? search : 'movies'}`)
       let groupData = _.groupBy(movies.data.Search, 'Type')
       setdata(Object.entries(groupData))
       
